@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nexedhub/view/login_screen.dart';
+import 'package:nexedhub/view/loginScreen/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
