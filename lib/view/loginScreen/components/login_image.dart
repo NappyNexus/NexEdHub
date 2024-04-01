@@ -5,6 +5,16 @@ class LogInImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        image: const DecorationImage(
+          image: AssetImage('assets/office-buildings-trees.jpg'),
+          fit: BoxFit.cover, // Ensure image covers the entire container
+        ),
+      ),
+      width: 497,
+      height: 223, // Set width and height if needed
+    );
   }
 }

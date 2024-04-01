@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:nexedhub/view/styles.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nexedhub/view/loginScreen/components/login_image.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -23,13 +24,21 @@ class _LogInScreenState extends State<LogInScreen> {
           style: GoogleFonts.montserrat(
             textStyle: const TextStyle(
               color: Colors.black,
-              fontWeight: FontWeight.w900, /*fontSize: 5*/
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
           ),
         ),
       ),
-      body: Column(
-        children: [],
+      body: const Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            LogInImage(),
+          ],
+        ),
       ),
     );
   }
