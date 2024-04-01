@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nexedhub/view/loginScreen/components/login_image.dart';
 import 'package:nexedhub/view/loginScreen/components/login_textfield.dart';
+import 'package:nexedhub/view/loginScreen/components/my_app_bar.dart';
+//import 'package:nexedhub/view/styles.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -20,22 +22,7 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 56,
-        elevation: 1,
-        backgroundColor: Colors.white,
-        shadowColor: Colors.black,
-        title: Text(
-          "NexEdHub",
-          style: GoogleFonts.montserrat(
-            textStyle: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-        ),
-      ),
+      appBar: MyAppBar(),
       body: Center(
         child: SizedBox(
           width: 500,
