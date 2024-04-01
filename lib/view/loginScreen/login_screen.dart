@@ -1,12 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-//import 'package:nexedhub/view/styles.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nexedhub/view/loginScreen/components/checkbox.dart';
 import 'package:nexedhub/view/loginScreen/components/login_image.dart';
 import 'package:nexedhub/view/loginScreen/components/login_textfield.dart';
 import 'package:nexedhub/view/loginScreen/components/my_app_bar.dart';
-//import 'package:nexedhub/view/styles.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -48,6 +47,8 @@ class _LogInScreenState extends State<LogInScreen> {
               SizedBox(
                 height: 30,
               ),
+
+              //Username section 👤👤👤👤👤👤
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -68,7 +69,37 @@ class _LogInScreenState extends State<LogInScreen> {
                 controller: emailController,
                 hintText: "Ingrese su nombre de usuario",
                 obscureText: false,
-              )
+              ),
+              SizedBox(
+                height: 30,
+              ),
+
+              //Password Section 🔑🔑🔑🔑🔑🔑
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Contraseña",
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              MyTextField(
+                controller: passwordController,
+                hintText: "Ingrese su contraseña",
+                obscureText: true,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              MyCheckbox()
             ],
           ),
         ),
