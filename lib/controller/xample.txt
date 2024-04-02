@@ -1,0 +1,1 @@
+Controller pasa la data al view (puente)
