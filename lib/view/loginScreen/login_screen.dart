@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nexedhub/view/loginScreen/components/checkbox.dart';
+import 'package:nexedhub/view/loginScreen/components/forgot_links.dart';
 import 'package:nexedhub/view/loginScreen/components/login_button.dart';
 import 'package:nexedhub/view/loginScreen/components/login_image.dart';
 import 'package:nexedhub/view/loginScreen/components/login_textfield.dart';
@@ -103,9 +104,13 @@ class _LogInScreenState extends State<LogInScreen> {
                 ),
                 MyCheckbox(),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
-                LogInButton()
+                LogInButton(),
+                SizedBox(
+                  height: 25,
+                ),
+                ForgotUserAndPassword(),
               ],
             ),
           ),
