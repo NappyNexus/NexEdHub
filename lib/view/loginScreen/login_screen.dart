@@ -110,6 +110,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 SizedBox(
                   height: 25,
                 ),
+                //recovery link
                 ForgotUserAndPassword(),
               ],
             ),
