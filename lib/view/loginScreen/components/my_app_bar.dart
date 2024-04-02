@@ -10,7 +10,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: jdpblue,
+      backgroundColor: CustomColors.jdpblue,
       title: Text(
         "NexEdHub",
         style: GoogleFonts.montserrat(

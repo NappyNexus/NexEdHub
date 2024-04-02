@@ -17,7 +17,7 @@ class LogInButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: jdpblue,
+          color: CustomColors.jdpblue,
         ),
         child: Text(
           "Iniciar Sesion",

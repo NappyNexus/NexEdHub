@@ -8,6 +8,7 @@ import 'package:nexedhub/view/loginScreen/components/login_button.dart';
 import 'package:nexedhub/view/loginScreen/components/login_image.dart';
 import 'package:nexedhub/view/loginScreen/components/login_textfield.dart';
 import 'package:nexedhub/view/loginScreen/components/my_app_bar.dart';
+import 'package:nexedhub/view/loginScreen/components/toggle_switch.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -110,7 +111,12 @@ class _LogInScreenState extends State<LogInScreen> {
                 SizedBox(
                   height: 25,
                 ),
+                //recovery link
                 ForgotUserAndPassword(),
+                SizedBox(
+                  height: 40,
+                ),
+                MyToggleSwitch(),
               ],
             ),
           ),
