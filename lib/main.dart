@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nexedhub/view/loginScreen/login_screen.dart';
+import 'package:nexedhub/view/loginScreen/Screens/admin_log_screen.dart';
+import 'package:nexedhub/view/loginScreen/Screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LogInScreen(),
+      home: const AdminLogScreen(),
     );
   }
 }
