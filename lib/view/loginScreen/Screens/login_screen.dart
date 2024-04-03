@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:nexedhub/view/loginScreen/Screens/admin_log_screen.dart';
 import 'package:nexedhub/view/loginScreen/components/checkbox.dart';
 import 'package:nexedhub/view/loginScreen/components/forgot_links.dart';

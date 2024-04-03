@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:nexedhub/view/loginScreen/Screens/admin_log_screen.dart';
-import 'package:nexedhub/view/loginScreen/Screens/login_screen.dart';
+//import 'package:nexedhub/view/loginScreen/Screens/login_screen.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
