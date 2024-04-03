@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nexedhub/view/loginScreen/components/checkbox.dart';
@@ -24,31 +22,31 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: const MyAppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: SizedBox(
             width: 500,
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
-                LogInImage(),
-                SizedBox(
+                const LogInImage(),
+                const SizedBox(
                   height: 50,
                 ),
                 Text(
                   "Iniciar Sesión en NexEdHub",
                   style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w800,
                       fontSize: 25,
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
 
@@ -66,7 +64,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 MyTextField(
@@ -74,7 +72,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   hintText: "Ingrese su nombre de usuario",
                   obscureText: false,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
 
@@ -92,7 +90,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 MyTextField(
@@ -100,23 +98,26 @@ class _LogInScreenState extends State<LogInScreen> {
                   hintText: "Ingrese su contraseña",
                   obscureText: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                MyCheckbox(),
-                SizedBox(
+                const MyCheckbox(),
+                const SizedBox(
                   height: 20,
                 ),
-                LogInButton(),
-                SizedBox(
+                const LogInButton(),
+                const SizedBox(
                   height: 25,
                 ),
                 //recovery link
-                ForgotUserAndPassword(),
-                SizedBox(
+                const ForgotUserAndPassword(),
+                const SizedBox(
                   height: 40,
                 ),
-                MyToggleSwitch(),
+                const MyToggleSwitch(),
+                const SizedBox(
+                  height: 40,
+                ),
               ],
             ),
           ),

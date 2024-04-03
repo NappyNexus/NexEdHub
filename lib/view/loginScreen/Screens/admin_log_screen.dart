@@ -10,6 +10,12 @@ class AdminLogScreen extends StatefulWidget {
 class _AdminLogScreenState extends State<AdminLogScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return AppBar(
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {},
+      ),
+      title: const Text("Welcome"),
+    );
   }
 }

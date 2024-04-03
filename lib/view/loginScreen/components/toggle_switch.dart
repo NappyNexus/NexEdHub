@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nexedhub/view/styles.dart';
@@ -22,20 +20,20 @@ class MyToggleSwitch extends StatelessWidget {
 
     return ToggleSwitch(
       customTextStyles: [inactiveTextStyle, activeTextStyle],
-      borderColor: [CustomColors.switchbg],
+      borderColor: const [CustomColors.switchbg],
       borderWidth: 5,
       minWidth: 300,
       cornerRadius: 15,
-      activeBgColors: [
+      activeBgColors: const [
         [Colors.white],
         [Colors.white]
       ],
       activeFgColor: Colors.black,
       inactiveBgColor: CustomColors.switchbg,
-      inactiveFgColor: Color(0xFF616f8a),
+      inactiveFgColor: const Color(0xFF616f8a),
       initialLabelIndex: 1,
       totalSwitches: 2,
-      labels: ['Maestro', 'Admin'],
+      labels: const ['Maestro', 'Admin'],
       radiusStyle: true,
       onToggle: (index) {
         print('switched to: $index');
