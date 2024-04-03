@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nexedhub/view/loginScreen/Screens/admin_log_screen.dart';
 import 'package:nexedhub/view/styles.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class MyToggleSwitch extends StatelessWidget {
-  const MyToggleSwitch({super.key});
+  const MyToggleSwitch({super.key, required this.onToggle});
+
+  final Function(int) onToggle;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +39,11 @@ class MyToggleSwitch extends StatelessWidget {
       labels: const ['Maestro', 'Admin'],
       radiusStyle: true,
       onToggle: (index) {
-        print('switched to: $index');
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const AdminLogScreen(),
+          ),
+        );
       },
     );
   }
