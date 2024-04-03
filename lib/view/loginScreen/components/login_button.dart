@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nexedhub/view/styles.dart';
 
 class LogInButton extends StatelessWidget {
-  const LogInButton({super.key});
+  const LogInButton({super.key, required this.onPressed});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        print("Button pressed");
-      },
+      onTap: onPressed,
       child: Container(
         width: 490,
         height: 50,
