@@ -31,7 +31,7 @@ class MyToggleSwitch extends StatelessWidget {
       activeFgColor: Colors.black,
       inactiveBgColor: CustomColors.switchbg,
       inactiveFgColor: const Color(0xFF616f8a),
-      initialLabelIndex: 1,
+      initialLabelIndex: 0,
       totalSwitches: 2,
       labels: const ['Maestro', 'Admin'],
       radiusStyle: true,

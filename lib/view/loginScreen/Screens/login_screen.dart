@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nexedhub/view/loginScreen/Screens/admin_log_screen.dart';
 import 'package:nexedhub/view/loginScreen/components/checkbox.dart';
 import 'package:nexedhub/view/loginScreen/components/forgot_links.dart';
 import 'package:nexedhub/view/loginScreen/components/login_button.dart';
@@ -7,6 +8,7 @@ import 'package:nexedhub/view/loginScreen/components/login_image.dart';
 import 'package:nexedhub/view/loginScreen/components/login_textfield.dart';
 import 'package:nexedhub/view/loginScreen/components/my_app_bar.dart';
 import 'package:nexedhub/view/loginScreen/components/toggle_switch.dart';
+import 'package:nexedhub/model/auth_service.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -105,7 +107,21 @@ class _LogInScreenState extends State<LogInScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const LogInButton(),
+                LogInButton(
+                  onPressed: () async {
+                    final message = await AuthService().login(
+                      email: emailController.text,
+                      password: passwordController.text,
+                    );
+                    if (message!.contains('Success')) {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const AdminLogScreen(),
+                        ),
+                      );
+                    }
+                  },
+                ),
                 const SizedBox(
                   height: 25,
                 ),
