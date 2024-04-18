@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexedhub/main.dart';
 import 'package:nexedhub/view/loginScreen/Screens/admin_log_screen.dart';
 import 'package:nexedhub/view/loginScreen/components/checkbox.dart';
 import 'package:nexedhub/view/loginScreen/components/forgot_links.dart';
@@ -9,7 +10,7 @@ import 'package:nexedhub/view/loginScreen/components/login_textfield.dart';
 import 'package:nexedhub/view/loginScreen/components/login_title.dart';
 import 'package:nexedhub/view/loginScreen/components/my_app_bar.dart';
 import 'package:nexedhub/view/loginScreen/components/toggle_switch.dart';
-import 'package:nexedhub/model/auth_service.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -21,6 +22,31 @@ class LogInScreen extends StatefulWidget {
 class _LogInScreenState extends State<LogInScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  Future<void> _signIn() async {
+    try {
+      final response = await supabase.auth.signInWithPassword(
+          email: "${emailController.text}@gmail.com",
+          password: passwordController.text);
+
+      if (response.session == null) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("error mmg")));
+      } else {
+        // Login successful, navigate to the home screen
+        //Navigator.pushReplacementNamed(context, '/home');
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const AdminLogScreen(),
+          ),
+        );
+        //print("succes mmg we made it");
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Unexpected error: $e')));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +65,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 const SizedBox(
                   height: 50,
                 ),
-                LoginTitle(title: "Iniciar Sesión en NexEdHub"),
+                const LoginTitle(title: "Iniciar Sesión en NexEdHub"),
                 const SizedBox(
                   height: 30,
                 ),
@@ -74,18 +100,13 @@ class _LogInScreenState extends State<LogInScreen> {
                   height: 20,
                 ),
                 LogInButton(
-                  onPressed: () async {
-                    final message = await AuthService().login(
-                      email: emailController.text,
-                      password: passwordController.text,
-                    );
-                    if (message!.contains('Success')) {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const AdminLogScreen(),
-                        ),
-                      );
-                    }
+                  lenght: 490,
+                  height: 50,
+                  placeholder: "Iniciar Sesion",
+                  onPressed: () {
+                    setState(() {
+                      _signIn();
+                    });
                   },
                 ),
                 const SizedBox(
@@ -96,8 +117,17 @@ class _LogInScreenState extends State<LogInScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-                MyToggleSwitch(
-                  onToggle: (index) {},
+                CustomToggleSwitch(
+                  position: 0,
+                  onToggle: () {
+                    setState(() {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const AdminLogScreen(),
+                        ),
+                      );
+                    });
+                  },
                 ),
                 const SizedBox(
                   height: 40,
